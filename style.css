@@ -3,13 +3,13 @@
 *{box-sizing:border-box}
 body{margin:0;font-family:"Hiragino Sans","Yu Gothic UI","Meiryo",sans-serif;color:var(--ink);background:var(--bg);line-height:1.9;font-size:17px}
 a{color:var(--sea)}
-header.site{background:linear-gradient(135deg,var(--navy),var(--sea));color:#fff}
-header.site .in{max-width:980px;margin:0 auto;padding:30px 20px 24px}
-header.site a{color:#fff;text-decoration:none}
-header.site .brand{font-size:15px;letter-spacing:.2em;opacity:.9;font-weight:bold}
-header.site h1{margin:6px 0 8px;font-size:42px;letter-spacing:.04em;line-height:1.25}
-header.site p.tag{margin:0;opacity:1;font-size:21px;font-weight:bold}
-header.site p.sub{margin:6px 0 0;opacity:.82;font-size:14px}
+header.site{background:#fff;border-bottom:1px solid var(--line)}
+header.site .in{max-width:980px;margin:0 auto;padding:20px 20px 16px;display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+header.site a{text-decoration:none}
+header.site .logo img{display:block;height:112px;width:auto}
+header.site p.sub{margin:0;flex:1 1 300px;min-width:260px;color:var(--muted);font-size:14.5px;line-height:1.8}
+header.site h1.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(max-width:700px){header.site .in{gap:14px}header.site .logo img{height:68px}}
 nav.tabs{background:var(--navy);border-top:1px solid rgba(255,255,255,.15)}
 nav.tabs .in{max-width:980px;margin:0 auto;padding:0 12px;display:flex;flex-wrap:wrap}
 nav.tabs a{color:#dbe7f0;text-decoration:none;font-size:17px;padding:14px 18px;display:block}
