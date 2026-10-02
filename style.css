@@ -22,6 +22,15 @@ main h3{color:var(--navy);margin:30px 0 10px;font-size:24px;line-height:1.4}
 .card h3{margin:4px 0 10px;font-size:21px}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
 .grid3 .card{margin:0}
+/* 公的な裏づけの帯（トップページ） */
+.badges{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0 6px}
+.badges .b{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--sea);
+border-radius:10px;padding:14px 16px;display:block;text-decoration:none}
+.badges a.b:hover{border-color:var(--sea);background:#f7fbfd}
+.badges .b b{display:block;color:var(--navy);font-size:15.5px;line-height:1.5}
+.badges .b span{display:block;margin-top:6px;color:var(--muted);font-size:13px;line-height:1.7}
+.badges .b em{font-style:normal;color:var(--sea);font-weight:bold}
+@media(max-width:820px){.badges{grid-template-columns:1fr;gap:10px}}
 /* トップページのヒーロー動画（全幅） */
 .hero{position:relative;width:100%;height:clamp(340px,58vh,640px);overflow:hidden;
 background:var(--navy);line-height:0}
