@@ -7,9 +7,10 @@ header.site{background:#fff;border-bottom:1px solid var(--line)}
 header.site .in{max-width:980px;margin:0 auto;padding:20px 20px 16px;display:flex;align-items:center;gap:26px;flex-wrap:wrap}
 header.site a{text-decoration:none}
 header.site .logo img{display:block;height:112px;width:auto}
-header.site p.sub{margin:0;flex:1 1 300px;min-width:260px;color:var(--muted);font-size:14.5px;line-height:1.8}
+header.site p.sub{margin:0;flex:1 1 300px;min-width:260px;color:var(--navy);font-size:17.5px;font-weight:700;line-height:1.75;letter-spacing:.01em}
+header.site p.sub b{color:var(--sea)}
 @media(max-width:820px){header.site .in{gap:10px 14px}header.site .logo img{height:64px}
-header.site p.sub{flex:1 1 100%;min-width:0;font-size:13.5px}}
+header.site p.sub{flex:1 1 100%;min-width:0;font-size:16px}}
 nav.tabs{background:var(--navy);border-top:1px solid rgba(255,255,255,.15)}
 nav.tabs .in{max-width:980px;margin:0 auto;padding:0 12px;display:flex;flex-wrap:wrap}
 nav.tabs a{color:#dbe7f0;text-decoration:none;font-size:17px;padding:14px 18px;display:block}
@@ -22,6 +23,7 @@ main h3{color:var(--navy);margin:30px 0 10px;font-size:24px;line-height:1.4}
 .card h3{margin:4px 0 10px;font-size:21px}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
 .grid3 .card{margin:0}
+.grid3 .card h3{font-size:28px;font-weight:800;color:var(--navy);letter-spacing:.02em;margin:2px 0 12px;line-height:1.35}
 /* 公的な裏づけの帯（トップページ） */
 .badges{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0 6px}
 .badges .b{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--sea);
@@ -115,7 +117,7 @@ footer{background:var(--navy);color:#c9d8e4;font-size:16px;padding:30px 20px;mar
 footer .in{max-width:980px;margin:0 auto}
 footer a{color:#dbe7f0}
 footer .small{font-size:13px;opacity:.75;margin-top:12px}
-@media (max-width:760px){.grid3{grid-template-columns:1fr}.list a.entry{grid-template-columns:1fr}header.site h1{font-size:30px}header.site p.tag{font-size:17px}header.site p.sub{font-size:12.5px}main h1.page,main h2.page{font-size:26px}.lead{font-size:18px}nav.tabs a{padding:11px 13px;font-size:15px}}
+@media (max-width:760px){.grid3{grid-template-columns:1fr}.grid3 .card h3{font-size:24px}.list a.entry{grid-template-columns:1fr}header.site h1{font-size:30px}header.site p.tag{font-size:17px}header.site p.sub{font-size:15px}main h1.page,main h2.page{font-size:26px}.lead{font-size:18px}nav.tabs a{padding:11px 13px;font-size:15px}}
 
 /* ── 文字を左から右へ流し込む演出 ───────────────────
    JavaScriptが動くときだけ有効（html.anim が付く）。
