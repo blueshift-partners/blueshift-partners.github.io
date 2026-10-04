@@ -13,6 +13,7 @@
 <link rel="icon" href="../img/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../img/favicon-180.png">
 <link rel="stylesheet" href="../style.css">
+<script>document.documentElement.className+=" anim";</script>
 </head><body>
 <header class="site"><div class="in">
 <a class="logo" href="../index.html"><img src="../img/logo.svg" alt="ブルーシフト・パートナーズ　浜に、にぎわいと稼ぐ力を！"></a>
@@ -49,4 +50,40 @@
 <div class="small"><a href="../privacy.html">プライバシーポリシー</a></div>
 <div class="small">© Blue Shift Partners　各記事の要約とコメントは Blue Shift Partners が独自に作成したものです。正確な内容は各出典をご確認ください。</div>
 </div></footer>
+<script>
+(function(){
+  var sel = "main h1.page, main h2.page, main .lead, main .card h3, main .card p,"
+          + " main .badges .b, main .note, main .cta h3, main .cta p,"
+          + " main .flow .step, main .list a.entry, main section.item";
+  var els = [].slice.call(document.querySelectorAll(sel));
+  var root = document.documentElement;
+  if (!els.length || !("IntersectionObserver" in window)) {
+    root.className = root.className.replace(" anim", "");
+    return;
+  }
+  els.forEach(function(el){ el.classList.add("shift"); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      var el = en.target;
+      if (!en.isIntersecting) {
+        // 画面より上へ通り過ぎた要素は、演出を飛ばしてそのまま表示する。
+        // ページ内リンクや「戻る」で一気に飛んだとき、消えたままにならないように。
+        if (en.boundingClientRect.bottom < 0) { io.unobserve(el); el.classList.add("in"); }
+        return;
+      }
+      io.unobserve(el);
+      // 同時に画面へ入ったものは少しずつ遅らせ、左から順に流れて見えるようにする
+      var i = els.indexOf(el) % 6;
+      setTimeout(function(){ el.classList.add("in"); }, i * 70);
+    });
+  }, {rootMargin: "0px 0px -8% 0px", threshold: 0.05});
+  els.forEach(function(el){ io.observe(el); });
+  // 保険：何らかの事情で監視が働かないとき（タブが裏で読み込まれた等）、
+  // 3秒後に全部そのまま表示する。文字が消えたままになることだけは避ける。
+  setTimeout(function(){
+    if (els.some(function(el){ return el.classList.contains("in"); })) return;
+    root.className = root.className.replace(" anim", "");
+  }, 3000);
+})();
+</script>
 </body></html>

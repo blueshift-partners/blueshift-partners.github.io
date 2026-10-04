@@ -116,3 +116,21 @@ footer .in{max-width:980px;margin:0 auto}
 footer a{color:#dbe7f0}
 footer .small{font-size:13px;opacity:.75;margin-top:12px}
 @media (max-width:760px){.grid3{grid-template-columns:1fr}.list a.entry{grid-template-columns:1fr}header.site h1{font-size:30px}header.site p.tag{font-size:17px}header.site p.sub{font-size:12.5px}main h1.page,main h2.page{font-size:26px}.lead{font-size:18px}nav.tabs a{padding:11px 13px;font-size:15px}}
+
+/* ── 文字を左から右へ流し込む演出 ───────────────────
+   JavaScriptが動くときだけ有効（html.anim が付く）。
+   画面に入った要素から順に、18pxぶん左から戻す。
+   「動きすぎない」ことを優先する。相手は漁協・自治体で、
+   派手な動きは信頼感を損なうため、距離・速度とも控えめにする。 */
+.anim .shift{opacity:0;transform:translateX(-18px)}
+.anim .shift.in{opacity:1;transform:none;
+transition:opacity .5s ease-out,transform .6s cubic-bezier(.22,.8,.3,1)}
+.anim .hero .copy h1{opacity:0;transform:translateX(-26px);
+animation:heroIn .9s cubic-bezier(.22,.8,.3,1) .15s forwards}
+.anim .hero .copy h1 span{opacity:0;
+animation:heroIn .9s cubic-bezier(.22,.8,.3,1) .45s forwards}
+@keyframes heroIn{to{opacity:1;transform:none}}
+/* 動きを減らす設定の人には出さない（OSのアクセシビリティ設定を尊重） */
+@media (prefers-reduced-motion:reduce){
+.anim .shift,.anim .shift.in,.anim .hero .copy h1,.anim .hero .copy h1 span
+{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}}
