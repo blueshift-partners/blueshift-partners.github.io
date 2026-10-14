@@ -66,6 +66,13 @@ border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;justify-
 .flow .arrow::before{content:"↓"}
 .flow .step{padding:12px 14px}
 }
+.umigyo{background:linear-gradient(180deg,#f3f9fd,#ffffff);border:1px solid var(--line);
+border-radius:10px;padding:22px 24px;margin:24px 0}
+.umigyo h2{margin:0 0 10px;font-size:24px;color:var(--navy);letter-spacing:.02em}
+.umigyo p{margin:0 0 10px}
+.umigyo .def{font-size:19px;font-weight:700;color:var(--navy);line-height:1.8}
+.umigyo .src-note{margin:0;font-size:13px;color:var(--muted)}
+@media(max-width:760px){.umigyo{padding:18px}.umigyo h2{font-size:21px}.umigyo .def{font-size:17px}}
 .note{background:#eef6fb;border-left:5px solid var(--sea);padding:14px 18px;border-radius:6px;margin:20px 0;font-size:17px}
 .meta{color:var(--muted);font-size:15px;margin:8px 0 0}
 table{border-collapse:collapse;width:100%;background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:10px 0}
